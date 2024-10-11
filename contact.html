@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinoTime</title>
+    <link rel="stylesheet" href="style_contact.css">
+    <link rel="icon" href="img/cinema.png" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="releases.html">Upcoming Releases</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="contactForm">
+            <h1>Contact us</h1>
+            <input type="text" id="FirstName" placeholder="First Name" required> 
+            <input type="text" id="LastName" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Phone" required>  
+            <h4>Type your message</h4>
+            <textarea id="message" required></textarea>
+            <input type="submit" value="Send" id="button">
+            <div id="errorMessages" style="color: red;"></div>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 KinoTime. Created by:</p>
+            <ul>
+                <li>Yerkezhan Akhmetova</li>
+                <li>Akmagambetova Aliya</li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Отменяем стандартное поведение отправки формы
+
+            const firstName = document.getElementById("FirstName").value.trim();
+            const lastName = document.getElementById("LastName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const errorMessages = [];
+
+            // Проверка обязательных полей
+            if (!firstName) {
+                errorMessages.push("First Name is required.");
+            }
+            if (!lastName) {
+                errorMessages.push("Last Name is required.");
+            }
+            if (!email) {
+                errorMessages.push("Email is required.");
+            } else if (!validateEmail(email)) {
+                errorMessages.push("Please enter a valid email address.");
+            }
+            if (!phone) {
+                errorMessages.push("Phone number is required.");
+            }
+            if (!message) {
+                errorMessages.push("Message is required.");
+            }
+
+            // Отображение ошибок или успешная отправка
+            const errorMessagesDiv = document.getElementById("errorMessages");
+            errorMessagesDiv.innerHTML = ""; // Очистка предыдущих сообщений об ошибках
+
+            if (errorMessages.length > 0) {
+                errorMessages.forEach(function(error) {
+                    const p = document.createElement("p");
+                    p.textContent = error;
+                    errorMessagesDiv.appendChild(p);
+                });
+            } else {
+                // Если нет ошибок, можно отправить форму (или выполнить другие действия)
+                alert("Form submitted successfully!");
+                // Здесь вы можете отправить данные формы на сервер, если нужно
+                // Например, с использованием fetch или XMLHttpRequest
+                // this.submit(); // Если вы хотите отправить форму
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Регулярное выражение для проверки формата email
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>
