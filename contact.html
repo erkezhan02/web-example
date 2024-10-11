@@ -41,7 +41,7 @@
     
     <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Отменяем стандартное поведение отправки формы
+            event.preventDefault(); 
 
             const firstName = document.getElementById("FirstName").value.trim();
             const lastName = document.getElementById("LastName").value.trim();
@@ -50,7 +50,7 @@
             const message = document.getElementById("message").value.trim();
             const errorMessages = [];
 
-            // Проверка обязательных полей
+            
             if (!firstName) {
                 errorMessages.push("First Name is required.");
             }
@@ -69,9 +69,9 @@
                 errorMessages.push("Message is required.");
             }
 
-            // Отображение ошибок или успешная отправка
+            
             const errorMessagesDiv = document.getElementById("errorMessages");
-            errorMessagesDiv.innerHTML = ""; // Очистка предыдущих сообщений об ошибках
+            errorMessagesDiv.innerHTML = ""; 
 
             if (errorMessages.length > 0) {
                 errorMessages.forEach(function(error) {
@@ -80,16 +80,12 @@
                     errorMessagesDiv.appendChild(p);
                 });
             } else {
-                // Если нет ошибок, можно отправить форму (или выполнить другие действия)
                 alert("Form submitted successfully!");
-                // Здесь вы можете отправить данные формы на сервер, если нужно
-                // Например, с использованием fetch или XMLHttpRequest
-                // this.submit(); // Если вы хотите отправить форму
             }
         });
 
         function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Регулярное выражение для проверки формата email
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
             return re.test(String(email).toLowerCase());
         }
     </script>
