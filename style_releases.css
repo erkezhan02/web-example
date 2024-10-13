@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinoTime</title> 
-    <link rel="icon" href="img/cinema.png" type="image/x-icon"> 
-    <link rel="stylesheet" href="style_releases.css">
-    <style>
         * {
             margin: 0;
             padding: 0;
@@ -157,7 +148,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: center; 
+            text-align: center; /* Выравнивание текста по центру */
         }
 
         .color-changer button {
@@ -212,141 +203,4 @@
         .footer-content ul li a:hover {
             text-decoration: underline;
         }
-    </style>
-</head>
-<body>
-    <header id="header">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="releases.html">Upcoming Releases</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="releases">
-            <h1>Release calendar</h1>
-            <h2>Coming Soon in Cinemas</h2>
-            <ul class="release-list">
-                <li>
-                    <div class="movie">
-                        <img src="img/film1.webp" alt="TheatreHD: Cherry Orchard">
-                        <div class="movie-info">
-                            <h3>TheatreHD: Cherry Orchard</h3>
-                            <p>15 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film2.webp" alt="Fox">
-                        <div class="movie-info">
-                            <h3>Fox</h3>
-                            <p>16 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film3.webp" alt="Parents of Parents">
-                        <div class="movie-info">
-                            <h3>Parents of Parents</h3>
-                            <p>16 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film4.webp" alt="Substance">
-                        <div class="movie-info">
-                            <h3>Substance</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film5.webp" alt="Graph Monte-Kristo">
-                        <div class="movie-info">
-                            <h3>Graph Monte-Kristo</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film6.webp" alt="Plague">
-                        <div class="movie-info">
-                            <h3>Plague</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film7.webp" alt="Hellboy: Gorbun's Curse">
-                        <div class="movie-info">
-                            <h3>Hellboy: Gorbun's Curse</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film8.webp" alt="In the Fog">
-                        <div class="movie-info">
-                            <h3>In the Fog</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="movie">
-                        <img src="img/film9.webp" alt="Paris, Texas">
-                        <div class="movie-info">
-                            <h3>Paris, Texas</h3>
-                            <p>19 September</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="number-sorter">
-            <h2>Number Sorter</h2>
-            <label for="number-input">Enter a number:</label>
-            <input type="text" id="number-input" placeholder="Enter a number">
-            <button id="sort-button">Sort Number</button>
-            <div class="result" id="result"></div>
-        </section>
-
-        <section class="color-changer">
-            <h2>Change Background Color</h2>
-            <button id="change-color-button">Change Color</button>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 KinoTime. All rights reserved.</p>
-            <ul>
-                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                <li><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById("change-color-button").addEventListener("click", function() {
-            document.body.style.backgroundColor = 
-                "rgb(" + Math.floor(Math.random() * 256) + ", " +
-                Math.floor(Math.random() * 256) + ", " +
-                Math.floor(Math.random() * 256) + ")";
-        });
-    </script>
-</body>
-</html>
+    
